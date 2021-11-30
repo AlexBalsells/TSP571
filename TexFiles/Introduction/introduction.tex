@@ -1,0 +1,29 @@
+\section{Introduction}
+\label{sec:Introduction}
+
+In the project, we solve the Traveling Salesperson Problem (TSP) with a branch and cut method...But first some notation. We are given a graph $G = (V,E)$. We denote $V(G)$ to be the vertices or nodes of graph $G$, and $E(G)$ to be the edges or arcs of graph $G$.
+
+Given an $\mathcal{S} \subset V(G)$, we denote the set of edges with both ends in $\mathcal{S}$ as $\gamma(\mathcal{S})$. We denote the set of edges with only one end in $\mathcal{S}$ as $\delta(\mathcal{S})$. This is equivalently called a \textit{cut} of $\mathcal{S}$.
+
+\subsection{Problem Formulation}
+Let $\mathcal{S}\subset V(G)$. Assume we have $n$ nodes and $m$ edges. The problem can be expressed as the following IPP:
+
+
+\begin{gather*}
+  \textrm{min}\: c^T x \\
+  \sum_{e\in\delta ({i})} x_e = 2, \hspace{5mm} \forall i \in V(G) \tag{IO}\label{cons:IO} \\
+  \sum_{e\in E(S)} x_e \leq |S| -1, \hspace{5mm} \forall S \neq \O, V(G) \tag{PF2} \\
+  x \in\mathbb{B}^n \label{cons:binary}
+\end{gather*}
+
+
+\begin{comment}
+\begin{center}
+  $\textrm{min}\hspace{2mm} c^T x$\\
+  $x \in \mathbb{B}^n$ \\
+  $\sum_{e\in\delta ({i})} x_e = 2, \hspace{5mm} \forall i \in V(G) \label{constraint:In_Out}\tag{IO}$ \\
+  $\sum_{e\in E(S)} x_e \leq |S| -1, \hspace{5mm} \forall S \neq \O, V(G)$
+\end{center}
+\end{comment}
+
+where line $\eqref{const:IO}$ states that every node must have exactly two arcs attached to it. Thought more generally, that every node has a path in and a path out. 

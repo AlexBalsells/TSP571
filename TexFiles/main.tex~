@@ -1,0 +1,18 @@
+\documentclass[12pt]{article}
+\usepackage{amsfonts}
+
+\title{The Traveling Salesperson Problem}
+
+\author{Alejandro, Bilyana, Cito}
+
+\date{\today}
+
+\begin{document}
+\pagenumbering{gobble} %removes current page number and restarts count at 1
+\maketitle
+
+\input{./abstract/abstract}
+\include{./Introduction/introduction}
+\include{./Computational_Results/comp_results}
+
+\end{document}

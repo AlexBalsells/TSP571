@@ -1,0 +1,15 @@
+\documentclass[12pt]{article}
+\begin{document}
+
+\textit{pdflatex main.tex} \\
+This compiles the main.tex file and creates main.pdf
+
+\textit{pdflatex -jobname=Chap2 "$\backslash$ includeonly$\{$./Chapter2/chapter2$\}$ $\backslash$ input$\{$ main$\}$"} \\
+This compiles the first page of the main.tex file with chapter2.tex found in folder Chapter2. The resulting pdf is called Chap2.pdf.
+
+\textit{evince Chap2.pdf} \\
+This displays the pdf of Chapter2
+
+
+
+\end{document}
